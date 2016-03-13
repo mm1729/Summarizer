@@ -1,0 +1,55 @@
+body {
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 100%;
+    padding: 5px;
+    margin: 10px;
+}
+input[type="button"] {
+    font-size: 14px;
+    color: #fff;
+    background-color: #f44336;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #d41326;
+}
+input[type="button"]:hover {
+    background-color: #e44336;
+}
+input[type="button"]:active {
+    background-color: #e44336;
+    box-shadow: 0 2px #d41326;
+    transform: translateY(3px);
+}
+input[type="button"]:focus{
+    outline: 0;
+}
+#title {
+    display: inline-block;
+    padding: 6px;
+    text-align: center;
+}
+input[type="text"]{
+    display: inline-block;
+    margin: 10px 0 0 0;
+    width: 100%;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.3s;
+}
+input[type="text"]:focus {
+    outline: 0;
+    border-bottom: solid 2px #969696;
+}
+#action {
+    margin: 0 auto;
+    padding: 0 1em 0 0;
+    max-width: 768px;
+    text-align: center;
+    display: inline-block;
+}
