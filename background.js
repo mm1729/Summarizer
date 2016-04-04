@@ -42,7 +42,10 @@ function processPage() {
                 var article = res.all_text.join('\n')
                 var summary = summarize(title, article);
                 addSummarytoPage(title, summary);
-                saveSummary(title, summary, url);
+                var summStr = '';
+                for(p in summary)
+                    summStr += summary[p] + '\n';
+                saveSummary(title, summStr, url);
             });
     });
 }
@@ -51,6 +54,7 @@ function historyPage() {
     document.getElementById('action').style.display = 'none';
     document.getElementById('summary').style.display = 'none';
     document.getElementById('history-table').style.display = 'inline-block';
+    setHistory();
 }
 
 function mainPage() {
@@ -77,16 +81,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function saveSummary(title, summary, url) {
     var newData = {"title" : title || "no title", "summary" : summary, "url" : url};
-    chrome.storage.sync.get("data", function (obj) {
-        obj = (obj == {}) ? {'all' : [data]} : obj.all.push(data);
-        chrome.storage.sync.set(obj, function() {
+    chrome.storage.local.get("data", function (obj) {
+        var len = Object.keys(obj).length;
+        console.log('obj');
+        console.log(obj);
+        var newObj;
+        if(len == 0) {
+            newObj = [newData];
+        } else {
+            newObj = obj.data;
+            for (var i = newObj.length - 1; i > -1; i--) {
+                if (newObj[i].url === newData.url)
+                    newObj.splice(i, 1);
+            }
+            newObj.push(newData);
+        }
+        chrome.storage.local.set({"data" : newObj}, function() {
               // Notify that we saved.
               console.log('Settings saved');
         });
     });
-    /*chrome.storage.sync.set({'value': 23}, function() {
-          // Notify that we saved.
-          message('Settings saved');
-    });*/
 
+}
+
+function setHistory() {
+    chrome.storage.local.get("data", function (obj) {
+        var tableDiv = document.getElementById('history-table');
+        tableDiv.innerHTML = '';
+        var id = 0;
+        var data = obj.data.reverse();
+        for(item in data) {
+            var str = '<input class="toggle-box" id="header' + id + '" type="checkbox" >';
+
+            str+= '<label for="header' + id + '">' + data[item].title + '</label>'
+
+            str+= '<div><p>' + data[item].summary + '</p>\
+            <a href="' + data[item].url + '">ARTICLE</a></div>';
+            tableDiv.innerHTML += str;
+            id++;
+        }
+        if(tableDiv.innerHTML == '') tableDiv.innerHTML = 'No History';
+    });
 }

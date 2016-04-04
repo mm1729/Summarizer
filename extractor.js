@@ -2,17 +2,17 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
      console.log('hello form extract');
     if( request.message === "extract_text" ) {
-        text = getText(20);
+        text = getText();
 
         //text = summarize(text.titleNode, text.all_text.join('\n'));
-        //console.log(text);
+        console.log(text);
         sendResponse(text);
     }
   }
 );
 
 
-function getText(size) {
+function getText() {
     all_text = [];
 
     var title = document.getElementsByTagName('title')[0].innerHTML.toLowerCase();
