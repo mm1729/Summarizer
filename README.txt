@@ -52,3 +52,8 @@ Hence, we are left with a group of sentences that are highly TC as well as PC. T
 
 
 ALGORITHM RUN TIME: Since we utilize a merge sort like algorithm, we make only O(nlogn) comparisons instead of the usual O(n^2). Hence, this algorithm is very applicable to large articles.
+
+FEATURES: This algorithm was implemented as a Chrome extension. The 'theme' of this implementation is that we provide a 5-line summary for every article. Also, we save all the computed summaries in history.
+
+GITHUB:
+https://github.com/mm1729/Summarizer
