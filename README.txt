@@ -55,5 +55,11 @@ ALGORITHM RUN TIME: Since we utilize a merge sort like algorithm, we make only O
 
 FEATURES: This algorithm was implemented as a Chrome extension. The 'theme' of this implementation is that we provide a 5-line summary for every article. Also, we save all the computed summaries in history.
 
+HOW TO USE:
+- Click on SUMMARIZE PAGE to view a summary of the open tab.
+- Click on HISTORY to view the previous summaries
+    - Click on the 'plus' sign to expand previous summary and article link
+- Click on 5-LINE SUMMARY to go back to homepage
+
 GITHUB:
 https://github.com/mm1729/Summarizer
