@@ -61,5 +61,7 @@ HOW TO USE:
     - Click on the 'plus' sign to expand previous summary and article link
 - Click on 5-LINE SUMMARY to go back to homepage
 
+** PLEASE refresh the page if summarizer does could not display anything. This means the extractor.js has not been injected.
+
 GITHUB:
 https://github.com/mm1729/Summarizer
