@@ -3,14 +3,26 @@
     <head>
         <title>Summarizer</title>
         <link rel="stylesheet" type="text/css" href="popup.css">
-
-        <script src="popup.js"></script>
+        <script src="./background.js"></script>
+        <script src="./summarizer.js"></script>
     </head>
     <body>
-        <div id="title">Summarize</div>
+        <div id="dashboard">
+            <ul>
+                <li id="history"><a href="#">History</a></li>
+                <li id="title"><a href="#">5-line Summary</a></li>
+            </ul>
+        </div>
+
         <div id="action">
-            <input type="button" id="this-page" value="This Page" tabindex="-1"/>
-            <input type="text" placeholder="Other URL"/>
+            <input type="button" id="this-page" value="Summarize Page" tabindex="-1"/>
+        </div>
+
+        <div id="summary">
+        </div>
+
+        <div id="history-table">
+            test
         </div>
     </body>
 </html>

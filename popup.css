@@ -3,6 +3,8 @@ body {
     font-size: 100%;
     padding: 5px;
     margin: 10px;
+    width: 400px;
+    height: 600px;
 }
 input[type="button"] {
     font-size: 14px;
@@ -11,6 +13,7 @@ input[type="button"] {
     border: none;
     border-radius: 10px;
     box-shadow: 0 5px #d41326;
+    text-align: center;
 }
 input[type="button"]:hover {
     background-color: #e44336;
@@ -23,33 +26,42 @@ input[type="button"]:active {
 input[type="button"]:focus{
     outline: 0;
 }
-#title {
-    display: inline-block;
-    padding: 6px;
-    text-align: center;
-}
-input[type="text"]{
-    display: inline-block;
-    margin: 10px 0 0 0;
-    width: 100%;
-    font-family: "Segoe UI", sans-serif;
-    font-size: 14px;
-    appearance: none;
-    box-shadow: none;
-    border-radius: none;
-    padding: 10px;
-    border: none;
-    border-bottom: solid 2px #c9c9c9;
-    transition: border 0.3s;
-}
-input[type="text"]:focus {
-    outline: 0;
-    border-bottom: solid 2px #969696;
-}
+
 #action {
     margin: 0 auto;
-    padding: 0 1em 0 0;
+    padding: 1em 1em 0 8em;
     max-width: 768px;
     text-align: center;
     display: inline-block;
+}
+
+#summary {
+
+}
+#dashboard ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#dashboard li#history{
+    float: left;
+}
+
+#dashboard li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#dashboard li a:hover {
+    background-color: #111;
+}
+
+#history-table {
+    
 }
